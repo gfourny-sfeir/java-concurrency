@@ -23,13 +23,13 @@ public class StructuredConcurrency {
     public Dilly async() {
 
         Future<Preferences> preferencesFuture;
-        
+
         try (ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor()) {
             preferencesFuture = executorService.submit(apis::fetchPreferences);
         }
 
         try (var scope = new StructuredTaskScope.ShutdownOnFailure()) {
-            
+
             var beerTask = scope.fork(() -> apis.fetchBeer(preferencesFuture.get()));
             var vodkaTask = scope.fork(apis::fetchVodka);
 

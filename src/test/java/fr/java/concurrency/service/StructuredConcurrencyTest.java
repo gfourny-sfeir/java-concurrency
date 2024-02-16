@@ -21,7 +21,7 @@ class StructuredConcurrencyTest {
 
     private final StructuredConcurrency structuredConcurrency = new StructuredConcurrency();
 
-    private WireMockServer wireMockServer = new WireMockServer(options().port(8081)); //No-args constructor will start on port 8080, no HTTPS
+    private final WireMockServer wireMockServer = new WireMockServer(options().port(8081)); //No-args constructor will start on port 8080, no HTTPS
 
     @BeforeEach
     void init() {

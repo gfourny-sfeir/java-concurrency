@@ -13,13 +13,12 @@ import fr.java.concurrency.model.Dilly;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.options;
 import static java.util.Objects.isNull;
 import static org.awaitility.Awaitility.await;
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @author gfourny
  */
 class ThreadPoolTest {
-    
+
     private final ThreadPool threadPool = new ThreadPool();
 
     private final WireMockServer wireMockServer = new WireMockServer(options().port(8081)); //No-args constructor will start on port 8080, no HTTPS

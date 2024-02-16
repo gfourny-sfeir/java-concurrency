@@ -2,7 +2,6 @@ package fr.java.concurrency.service;
 
 import fr.java.concurrency.model.Dilly;
 import fr.java.concurrency.model.DillyMutable;
-import fr.java.concurrency.model.Preferences;
 
 /**
  * @author gfourny

@@ -6,7 +6,6 @@ import java.util.concurrent.Executors;
 
 import fr.java.concurrency.model.Dilly;
 import fr.java.concurrency.model.DillyMutable;
-import fr.java.concurrency.model.Preferences;
 
 /**
  * @author gfourny
@@ -14,7 +13,7 @@ import fr.java.concurrency.model.Preferences;
 public class ThreadPool {
 
     private final Apis apis;
-    
+
     private final ExecutorService executor = Executors.newFixedThreadPool(200);
 
     public ThreadPool() {
@@ -24,22 +23,21 @@ public class ThreadPool {
     public Dilly async() throws InterruptedException {
         var dillyMutable = new DillyMutable();
 
-            var done = new CountDownLatch(2);
+        var done = new CountDownLatch(2);
 
-            var pref = apis.fetchPreferences();
+        var pref = apis.fetchPreferences();
 
-            // i await for 2 responses
-             
-            executor.execute(() -> {
-                dillyMutable.setBeer(apis.fetchBeer(pref));
-                done.countDown();
-            });
-            executor.execute(() -> {
-                dillyMutable.setVodka(apis.fetchVodka());
-                done.countDown();
-            });
-            done.await();
-       
+        // i await for 2 responses
+
+        executor.execute(() -> {
+            dillyMutable.setBeer(apis.fetchBeer(pref));
+            done.countDown();
+        });
+        executor.execute(() -> {
+            dillyMutable.setVodka(apis.fetchVodka());
+            done.countDown();
+        });
+        done.await();
 
         return new Dilly(dillyMutable.getBeer(), dillyMutable.getVodka());
     }
