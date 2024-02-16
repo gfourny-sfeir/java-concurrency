@@ -7,7 +7,7 @@ import fr.java.concurrency.model.Dilly;
 /**
  * @author gfourny
  */
-public class CompletableFutureApi {
+public class CompletableFutureApi implements Caller {
 
     private final Apis apis;
 
@@ -15,6 +15,7 @@ public class CompletableFutureApi {
         this.apis = new Apis();
     }
 
+    @Override
     public Dilly async() {
 
         return CompletableFuture.supplyAsync(apis::fetchPreferences)

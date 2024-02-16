@@ -8,7 +8,7 @@ import fr.java.concurrency.model.Dilly;
 /**
  * @author gfourny
  */
-public class CompletableFutureWithVT {
+public class CompletableFutureWithVT implements Caller {
 
     private final Apis apis;
 
@@ -16,6 +16,7 @@ public class CompletableFutureWithVT {
         this.apis = new Apis();
     }
 
+    @Override
     public Dilly async() {
 
         try (var executors = Executors.newVirtualThreadPerTaskExecutor()) {

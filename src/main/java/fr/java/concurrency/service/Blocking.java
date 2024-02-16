@@ -5,15 +5,16 @@ import fr.java.concurrency.model.Dilly;
 /**
  * @author gfourny
  */
-public class Blocking {
+public class Blocking implements Caller {
 
     private final Apis apis;
 
     public Blocking() {
         this.apis = new Apis();
     }
-
-    public Dilly block() {
+    
+    @Override
+    public Dilly async() {
 
         var preferences = apis.fetchPreferences();
         var beer = apis.fetchBeer(preferences);

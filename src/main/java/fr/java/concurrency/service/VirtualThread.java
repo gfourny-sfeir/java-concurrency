@@ -8,7 +8,8 @@ import fr.java.concurrency.model.Dilly;
 /**
  * @author gfourny
  */
-public class VirtualThread {
+
+public class VirtualThread implements Caller {
 
     private final Apis apis;
 
@@ -16,6 +17,7 @@ public class VirtualThread {
         this.apis = new Apis();
     }
 
+    @Override
     public Dilly async() {
 
         try (var executors = Executors.newVirtualThreadPerTaskExecutor()) {

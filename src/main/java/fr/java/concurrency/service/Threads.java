@@ -6,7 +6,8 @@ import fr.java.concurrency.model.DillyMutable;
 /**
  * @author gfourny
  */
-public class Threads {
+
+public class Threads implements Caller {
 
     private final Apis apis;
 
@@ -14,7 +15,8 @@ public class Threads {
         this.apis = new Apis();
     }
 
-    public Dilly async() throws InterruptedException {
+    @Override
+    public Dilly async() {
         var dillyMutable = new DillyMutable();
         var pref = apis.fetchPreferences();
         var t1 = new Thread(() -> dillyMutable.setBeer(apis.fetchBeer(pref)));
@@ -22,8 +24,12 @@ public class Threads {
         t1.start();
         t2.start();
 
-        t1.join();
-        t2.join();
+        try {
+            t1.join();
+            t2.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         return new Dilly(dillyMutable.getBeer(), dillyMutable.getVodka());
     }
     // === PREHISTORIC ===

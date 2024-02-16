@@ -10,7 +10,8 @@ import fr.java.concurrency.model.DillyMutable;
 /**
  * @author gfourny
  */
-public class ThreadPool {
+
+public class ThreadPool implements Caller {
 
     private final Apis apis;
 
@@ -20,7 +21,8 @@ public class ThreadPool {
         this.apis = new Apis();
     }
 
-    public Dilly async() throws InterruptedException {
+    @Override
+    public Dilly async() {
         var dillyMutable = new DillyMutable();
 
         var done = new CountDownLatch(2);
@@ -37,7 +39,11 @@ public class ThreadPool {
             dillyMutable.setVodka(apis.fetchVodka());
             done.countDown();
         });
-        done.await();
+        try {
+            done.await();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         return new Dilly(dillyMutable.getBeer(), dillyMutable.getVodka());
     }

@@ -12,7 +12,8 @@ import fr.java.concurrency.model.Preferences;
 /**
  * @author gfourny
  */
-public class StructuredConcurrency {
+
+public class StructuredConcurrency implements Caller {
 
     private final Apis apis;
 
@@ -20,6 +21,7 @@ public class StructuredConcurrency {
         this.apis = new Apis();
     }
 
+    @Override
     public Dilly async() {
 
         Future<Preferences> preferencesFuture;

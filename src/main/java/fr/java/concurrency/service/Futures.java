@@ -8,7 +8,8 @@ import fr.java.concurrency.model.Dilly;
 /**
  * @author gfourny
  */
-public class Futures {
+
+public class Futures implements Caller {
 
     private final Apis apis;
 
@@ -16,6 +17,7 @@ public class Futures {
         this.apis = new Apis();
     }
 
+    @Override
     public Dilly async() {
 
         try (var executors = Executors.newFixedThreadPool(200)) {
