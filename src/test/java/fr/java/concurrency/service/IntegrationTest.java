@@ -19,7 +19,7 @@ import static org.awaitility.Awaitility.await;
 /**
  * @author gfourny
  */
-public class IntegrationTest {
+class IntegrationTest {
 
     @BeforeAll
     static void init() {
