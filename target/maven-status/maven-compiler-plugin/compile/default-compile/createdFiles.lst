@@ -1,0 +1,13 @@
+fr\java\concurrency\service\Apis.class
+fr\java\concurrency\model\Vodka.class
+fr\java\concurrency\service\Blocking.class
+fr\java\concurrency\model\DillyMutable.class
+fr\java\concurrency\service\CompletableFutureWithVT.class
+fr\java\concurrency\service\ThreadPool.class
+fr\java\concurrency\model\Preferences.class
+fr\java\concurrency\model\Dilly.class
+fr\java\concurrency\service\StructuredConcurrency.class
+fr\java\concurrency\service\VirtualThread.class
+fr\java\concurrency\service\CompletableFutureApi.class
+fr\java\concurrency\service\Threads.class
+fr\java\concurrency\model\Beer.class

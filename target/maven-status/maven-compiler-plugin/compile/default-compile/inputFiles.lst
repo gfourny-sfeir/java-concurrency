@@ -1,0 +1,13 @@
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\model\Beer.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\model\Dilly.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\model\DillyMutable.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\model\Preferences.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\model\Vodka.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\Apis.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\Blocking.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\CompletableFutureApi.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\CompletableFutureWithVT.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\StructuredConcurrency.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\ThreadPool.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\Threads.java
+C:\SFEIR\pres\java-concurrency\src\main\java\fr\java\concurrency\service\VirtualThread.java
