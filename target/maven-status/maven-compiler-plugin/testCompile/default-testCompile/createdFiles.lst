@@ -1,7 +1,0 @@
-fr\java\concurrency\service\BlockingTest.class
-fr\java\concurrency\service\ThreadPoolTest.class
-fr\java\concurrency\service\CompletableFutureApiTest.class
-fr\java\concurrency\service\ThreadsTest.class
-fr\java\concurrency\service\StructuredConcurrencyTest.class
-fr\java\concurrency\service\VirtualThreadTest.class
-fr\java\concurrency\service\CompletableFutureWithVTTest.class
