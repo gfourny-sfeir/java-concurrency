@@ -3,6 +3,8 @@ package fr.java.concurrency.service;
 import java.time.Duration;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -21,10 +23,16 @@ import static org.awaitility.Awaitility.await;
  */
 class IntegrationTest {
 
+    static WireMockServer wireMockServer = new WireMockServer(options().port(8081));
+
     @BeforeAll
     static void init() {
-        WireMockServer wireMockServer = new WireMockServer(options().port(8081));
         wireMockServer.start();
+    }
+    
+    @AfterAll
+    static void stopWiremock(){
+        wireMockServer.stop();
     }
 
     private static Stream<Arguments> classes() {
