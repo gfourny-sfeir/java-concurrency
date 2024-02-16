@@ -17,9 +17,9 @@ import static org.awaitility.Awaitility.await;
 /**
  * @author gfourny
  */
-class ThreadsTest {
+class FuturesTest {
 
-    private final Threads threads = new Threads();
+    private final Futures futures = new Futures();
 
     private final WireMockServer wireMockServer = new WireMockServer(options().port(8081)); //No-args constructor will start on port 8080, no HTTPS
 
@@ -38,9 +38,10 @@ class ThreadsTest {
 
         await().atMost(Duration.ofMillis(1700)).until(() ->
                 {
-                    Dilly dilly = threads.async();
+                    Dilly dilly = futures.async();
                     return !isNull(dilly) && !isNull(dilly.beer()) && !isNull(dilly.vodka());
                 }
         );
     }
+
 }
